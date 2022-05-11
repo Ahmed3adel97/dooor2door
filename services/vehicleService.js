@@ -50,7 +50,6 @@ class vehicleService {
             }
           }
           if(oldVehicle.location) {
-            console.log(1212);
             if (Math.abs(new Date(date), oldVehicle.location.updatTime) < 3000) {
               return {
                 status: 400,
@@ -67,9 +66,9 @@ class vehicleService {
             lat,
             lon
           }
-          const dist = Distance.between(vehicleLocation, Berlin).human_readable().distance
-          console.log(dist);
-          if(dist > 3.5) {
+          const dist = Distance.between(vehicleLocation, Berlin);
+          console.log();
+          if(dist > Distance('3.5 km')) {
             return {
               status: 400,
               message: 'your vehicle is out of city boundry'
@@ -85,7 +84,6 @@ class vehicleService {
           } catch(e){
             console.log(e);
           }
-          console.log('yy');
           io.emit("update_location", {lat, lon, vehicle_ID, date});
 
           return {

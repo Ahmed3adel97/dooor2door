@@ -1,4 +1,3 @@
-After completing the above procedure, the index.html file will look as follows âˆ’
 
 <!DOCTYPE html>
 <html>
@@ -7,12 +6,13 @@ After completing the above procedure, the index.html file will look as follows â
    <script>
       var socket = io();
       socket.on('update_location',function(data){
+               const socketData = 'vehicle ' + data.vehicle_ID +' in ' + ' Latitude ' + data.lat + ' Longitude ' + data.lon + ' at time ' + data.date; 
                document.body.innerHTML = '';
-               const socketData = 'vehicle ' + data.vehicle_ID + ' lat' + data.lat + ' lon' + data.lon + 'at time' + data.date; 
                document.write(socketData);
                console.log(data);
 
       });
    </script>
-   <body>hey</body>
+   <body>vehicle info</body> <br>
+   <h1></h1>
 </html>
