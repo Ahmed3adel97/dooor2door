@@ -33,4 +33,8 @@ run `npm install`to install all the dependencies
 
 run `npm start` to start the server on <localhost:3000>
 
+### To run tests 
 
+run `export NODE_ENV='test'`to turn to test mode
+
+run `node --experimental-vm-modules node_modules/jest/bin/jest.js` to run the unit tests
