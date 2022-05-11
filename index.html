@@ -1,0 +1,18 @@
+After completing the above procedure, the index.html file will look as follows −
+
+<!DOCTYPE html>
+<html>
+   <head><title>Hello world</title></head>
+   <script src="/socket.io/socket.io.js"></script>
+   <script>
+      var socket = io();
+      socket.on('update_location',function(data){
+               document.body.innerHTML = '';
+               const socketData = 'vehicle ' + data.vehicle_ID + ' lat' + data.lat + ' lon' + data.lon + 'at time' + data.date; 
+               document.write(socketData);
+               console.log(data);
+
+      });
+   </script>
+   <body>hey</body>
+</html>
