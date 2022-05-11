@@ -30,4 +30,7 @@ We have two sockets in the app, server socket that emit the location depending o
 
 ### To run
 run `npm install`to install all the dependencies
+
 run `npm start` to start the server on <localhost:3000>
+
+
