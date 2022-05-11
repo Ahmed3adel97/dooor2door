@@ -62,7 +62,7 @@ initDB();
 // console.log(day1 - 1);
 
 const PORT = 3000;
-httpServer.listen(PORT || 3000, () => {
+httpServer.listen(process.env.PORT || 3000, () => {
   console.log(1)
 })
 export default io;
