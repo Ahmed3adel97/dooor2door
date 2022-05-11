@@ -22,9 +22,8 @@ import socketModule from './misc/socket.js'
 
 const __filename = fileURLToPath(import.meta.url);
 
-// 👇️ "/home/john/Desktop/javascript"
-const __dirname = path.dirname(__filename);
-console.log('directory-name 👉️', __dirname);
+const __dirname = path.join(path.dirname(__filename ), 'index.html');
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -33,36 +32,10 @@ app.use(cors)
 dotenv.config()
 socketModule(io)
 initDB();
-// io.on('connection', function (socket) {
-//   console.log('A user connected');
-
-//   //Whenever someone disconnects this piece of code executed
-//   socket.on('disconnect', function () {
-//     console.log('A user disconnected');
-//   });
-// });
-// socketModule(io);
-// const url = "mongodb://localhost:27017/door2door";
-// mongoose.connect(url, {
-//   useNewUrlParser: true,
-// });
-
-// mongoose.connection.on('connected', () => {
-//   console.log('Connected to the database');
-// });
-
-// mongoose.connection.on('error', (err) => {
-//   console.error(`Failed to connected to the database: ${err}`);
-// });
-// var day1 = new Date("2019-12-02T12:00:00+01:20"); 
-// var day2 = new Date("2019-12-02T12:00:00+01:00");
-
-// var diff= Math.abs(day1-day2);
-// console.log(day1 +1);
-// console.log(day1 - 1);
-
+router.get("/", function (req, res) {
+  res.sendFile(__dirname);
+});
 const PORT = 3000;
 httpServer.listen(process.env.PORT || 3000, () => {
-  console.log(1)
 })
 export default io;
