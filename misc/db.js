@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const url = "mongodb://localhost:27017/door2door";
+// const url = "mongodb://localhost:27017/door2door";
+const url = "mongodb+srv://ahmed:amira97@cluster0.zjac9.mongodb.net/door2door212?retryWrites=true&w=majority";
 
 function initDB() {
   mongoose.connect(url, {
