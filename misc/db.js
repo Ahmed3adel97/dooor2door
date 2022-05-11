@@ -1,8 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+const config = dotenv.config();
+dotenv.config();
 
-// const url = "mongodb://localhost:27017/door2door";
-const url = "mongodb+srv://ahmed:amira97@cluster0.zjac9.mongodb.net/door2door212?retryWrites=true&w=majority";
-
+let url;
+if (process.env.NODE_ENV ==='dev'){
+   url = process.env.MONGODB_URI
+}
+if (process.env.NODE_ENV ==='test'){
+   url = process.env.MONGODB_URITest
+}
 function initDB() {
   mongoose.connect(url, {
     useNewUrlParser: true,

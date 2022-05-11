@@ -4,7 +4,6 @@ import { locationSchema } from '../models/location.js';
 const vehicleSchema = new mongoose.Schema({
     vehicle_ID: {
       type: String,
-      required: true 
     },
     location: locationSchema   
 })
