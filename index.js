@@ -32,7 +32,7 @@ app.use(cors)
 dotenv.config()
 socketModule(io)
 initDB();
-app.use(express.static(__dirname));
+app.use(express.static('index.html'));
 router.get("/", function (req, res) {
   res.sendFile(__dirname);
 });
