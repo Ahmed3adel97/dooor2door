@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-// const url = "mongodb://localhost:27017/door2door";
+const url = "mongodb://localhost:27017/door2door";
 
 function initDB() {
-  mongoose.connect(process.env.MONGODB_URI, {
+  mongoose.connect(url, {
     useNewUrlParser: true,
   });
 
